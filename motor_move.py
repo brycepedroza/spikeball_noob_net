@@ -38,7 +38,7 @@ p1 = GPIO.PWM(motor1['en'], 1000)
 p2 = GPIO.PWM(motor2['en'], 1000)
 p3 = GPIO.PWM(motor3['en'], 1000)
 
-p1.start(55)
+p1.start(55/2)
 p2.start(55)
 p3.start(55)
 
@@ -76,7 +76,7 @@ while(1):
         GPIO.output(motor2['in_2'], GPIO.HIGH)
         GPIO.output(motor3['in_1'], GPIO.LOW)
         GPIO.output(motor3['in_2'], GPIO.HIGH)
-        p1.ChangeDutyCycle(55)
+        p1.ChangeDutyCycle(55/2)
         p2.ChangeDutyCycle(55)
         p3.ChangeDutyCycle(55)
 
@@ -88,7 +88,7 @@ while(1):
         GPIO.output(motor2['in_2'], GPIO.HIGH)
         GPIO.output(motor3['in_1'], GPIO.HIGH)
         GPIO.output(motor3['in_2'], GPIO.LOW)
-        p1.ChangeDutyCycle(55)
+        p1.ChangeDutyCycle(55/2)
         p2.ChangeDutyCycle(40)
         p3.ChangeDutyCycle(40)
 
@@ -100,7 +100,7 @@ while(1):
         GPIO.output(motor2['in_2'], GPIO.LOW)
         GPIO.output(motor3['in_1'], GPIO.HIGH)
         GPIO.output(motor3['in_2'], GPIO.LOW)
-        p1.ChangeDutyCycle(55)
+        p1.ChangeDutyCycle(55/2)
         p2.ChangeDutyCycle(55)
         p3.ChangeDutyCycle(55)
 
@@ -112,7 +112,7 @@ while(1):
         GPIO.output(motor2['in_2'], GPIO.LOW)
         GPIO.output(motor3['in_1'], GPIO.LOW)
         GPIO.output(motor3['in_2'], GPIO.HIGH)
-        p1.ChangeDutyCycle(55)
+        p1.ChangeDutyCycle(55/2)
         p2.ChangeDutyCycle(40)
         p3.ChangeDutyCycle(40)
 
