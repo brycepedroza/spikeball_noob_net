@@ -6,12 +6,32 @@ in2 = 23
 en = 25
 temp1=1
 
+# Initialize the motors
+motor1 = {
+    "in_1": 24,
+    "in_2": 23,
+    "en": 25
+}
+motor2 = {
+    "in_1": 7,
+    "in_2": 8,
+    "en": 12
+}
+motor3 = {
+    "in_1": 16,
+    "in_2": 20,
+    "en": 21
+}
+
+# Configure the GPIO Pins
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(in1,GPIO.OUT)
 GPIO.setup(in2,GPIO.OUT)
 GPIO.setup(en,GPIO.OUT)
 GPIO.output(in1,GPIO.LOW)
 GPIO.output(in2,GPIO.LOW)
+
+# Pulse Width Modulation
 p=GPIO.PWM(en,1000)
 p.start(25)
 print("\n")
