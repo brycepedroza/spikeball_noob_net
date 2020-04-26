@@ -34,8 +34,14 @@ for motor in motors:
 # GPIO.output(in2,GPIO.LOW)
 
 # Pulse Width Modulation
-p = GPIO.PWM(en, 1000)
-p.start(66)
+p1 = GPIO.PWM(motor1['en'], 1000)
+p2 = GPIO.PWM(motor2['en'], 1000)
+p3 = GPIO.PWM(motor3['en'], 1000)
+
+p1.start(66)
+p2.start(66)
+p3.start(66)
+
 
 print("\n")
 print("wasd movement with q to stop and e to exit .....")
@@ -75,17 +81,23 @@ while(1):
 
     elif ctrl == 'l':
         print("low")
-        p.ChangeDutyCycle(25)
+        p1.ChangeDutyCycle(25)
+        p2.ChangeDutyCycle(25)
+        p3.ChangeDutyCycle(25)
         ctrl = 'z'
 
     elif ctrl == 'm':
         print("medium")
-        p.ChangeDutyCycle(50)
+        p1.ChangeDutyCycle(50)
+        p2.ChangeDutyCycle(50)
+        p3.ChangeDutyCycle(50)
         ctrl = 'z'
 
     elif ctrl == 'h':
         print("high")
-        p.ChangeDutyCycle(75)
+        p1.ChangeDutyCycle(75)
+        p2.ChangeDutyCycle(75)
+        p3.ChangeDutyCycle(75)
         ctrl = 'z'
 
     elif ctrl == 'e':
