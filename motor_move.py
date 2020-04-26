@@ -88,9 +88,9 @@ while(1):
         GPIO.output(motor2['in_2'], GPIO.HIGH)
         GPIO.output(motor3['in_1'], GPIO.HIGH)
         GPIO.output(motor3['in_2'], GPIO.LOW)
-        p1.ChangeDutyCycle(55)
-        p2.ChangeDutyCycle(40)
-        p3.ChangeDutyCycle(40)
+        p1.ChangeDutyCycle(60)
+        p2.ChangeDutyCycle(50)
+        p3.ChangeDutyCycle(50)
 
     elif ctrl == 's':
         print("backwards")
@@ -112,9 +112,9 @@ while(1):
         GPIO.output(motor2['in_2'], GPIO.LOW)
         GPIO.output(motor3['in_1'], GPIO.LOW)
         GPIO.output(motor3['in_2'], GPIO.HIGH)
-        p1.ChangeDutyCycle(55)
-        p2.ChangeDutyCycle(40)
-        p3.ChangeDutyCycle(40)
+        p1.ChangeDutyCycle(60)
+        p2.ChangeDutyCycle(50)
+        p3.ChangeDutyCycle(50)
 
     elif ctrl == 'l':
         print("low")
