@@ -42,6 +42,13 @@ p1.start(55)
 p2.start(55)
 p3.start(55)
 
+# make sure all motors aren't moving at start
+GPIO.output(motor1['in_1'], GPIO.LOW)
+GPIO.output(motor1['in_2'], GPIO.LOW)
+GPIO.output(motor2['in_1'], GPIO.LOW)
+GPIO.output(motor2['in_2'], GPIO.LOW)
+GPIO.output(motor3['in_1'], GPIO.LOW)
+GPIO.output(motor3['in_2'], GPIO.LOW)
 
 print("\n")
 print("wasd movement with q to stop and e to exit .....")
