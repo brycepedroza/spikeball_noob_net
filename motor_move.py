@@ -23,9 +23,9 @@ motors = [motor1, motor2, motor3]
 GPIO.setmode(GPIO.BCM)
 for motor in motors:
     # Configure the GPIO Pins
-    GPIO.setmode(motor['in_1'], GPIO.OUT)
-    GPIO.setmode(motor['in_2'], GPIO.OUT)
-    GPIO.setmode(motor['en'], GPIO.OUT)
+    GPIO.setup(motor['in_1'], GPIO.OUT)
+    GPIO.setup(motor['in_2'], GPIO.OUT)
+    GPIO.setup(motor['en'], GPIO.OUT)
 
 # GPIO.setup(in1,GPIO.OUT)
 # GPIO.setup(in2,GPIO.OUT)
