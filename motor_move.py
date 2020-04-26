@@ -61,44 +61,71 @@ while(1):
         GPIO.output(motor3['in_1'], GPIO.LOW)
         GPIO.output(motor3['in_2'], GPIO.LOW)
 
-    if ctrl == 'w':
-        print("forward")
-        GPIO.output(motor1['in_1'], GPIO.LOW)
-        GPIO.output(motor1['in_2'], GPIO.LOW)
-        GPIO.output(motor2['in_1'], GPIO.HIGH)
-        GPIO.output(motor2['in_2'], GPIO.LOW)
-        GPIO.output(motor3['in_1'], GPIO.HIGH)
-        GPIO.output(motor3['in_2'], GPIO.LOW)
-
-    if ctrl == 's':
-        print("backwards")
+    elif ctrl == 'w':
+        print("forwards")
         GPIO.output(motor1['in_1'], GPIO.LOW)
         GPIO.output(motor1['in_2'], GPIO.LOW)
         GPIO.output(motor2['in_1'], GPIO.LOW)
         GPIO.output(motor2['in_2'], GPIO.HIGH)
         GPIO.output(motor3['in_1'], GPIO.LOW)
         GPIO.output(motor3['in_2'], GPIO.HIGH)
+        p1.ChangeDutyCycle(66)
+        p2.ChangeDutyCycle(66)
+        p3.ChangeDutyCycle(66)
+
+    elif ctrl == 'a':
+        print("left")
+        GPIO.output(motor1['in_1'], GPIO.HIGH)
+        GPIO.output(motor1['in_2'], GPIO.LOW)
+        GPIO.output(motor2['in_1'], GPIO.LOW)
+        GPIO.output(motor2['in_2'], GPIO.HIGH)
+        GPIO.output(motor3['in_1'], GPIO.HIGH)
+        GPIO.output(motor3['in_2'], GPIO.LOW)
+        p1.ChangeDutyCycle(66)
+        p2.ChangeDutyCycle(40)
+        p3.ChangeDutyCycle(40)
+
+    elif ctrl == 's':
+        print("backwards")
+        GPIO.output(motor1['in_1'], GPIO.LOW)
+        GPIO.output(motor1['in_2'], GPIO.LOW)
+        GPIO.output(motor2['in_1'], GPIO.HIGH)
+        GPIO.output(motor2['in_2'], GPIO.LOW)
+        GPIO.output(motor3['in_1'], GPIO.HIGH)
+        GPIO.output(motor3['in_2'], GPIO.LOW)
+        p1.ChangeDutyCycle(66)
+        p2.ChangeDutyCycle(66)
+        p3.ChangeDutyCycle(66)
+
+    elif ctrl == 'd':
+        print("right")
+        GPIO.output(motor1['in_1'], GPIO.LOW)
+        GPIO.output(motor1['in_2'], GPIO.HIGH)
+        GPIO.output(motor2['in_1'], GPIO.HIGH)
+        GPIO.output(motor2['in_2'], GPIO.LOW)
+        GPIO.output(motor3['in_1'], GPIO.LOW)
+        GPIO.output(motor3['in_2'], GPIO.HIGH)
+        p1.ChangeDutyCycle(66)
+        p2.ChangeDutyCycle(40)
+        p3.ChangeDutyCycle(40)
 
     elif ctrl == 'l':
         print("low")
         p1.ChangeDutyCycle(25)
         p2.ChangeDutyCycle(25)
         p3.ChangeDutyCycle(25)
-        ctrl = 'z'
 
     elif ctrl == 'm':
         print("medium")
         p1.ChangeDutyCycle(50)
         p2.ChangeDutyCycle(50)
         p3.ChangeDutyCycle(50)
-        ctrl = 'z'
 
     elif ctrl == 'h':
         print("high")
         p1.ChangeDutyCycle(75)
         p2.ChangeDutyCycle(75)
         p3.ChangeDutyCycle(75)
-        ctrl = 'z'
 
     elif ctrl == 'e':
         GPIO.cleanup()
