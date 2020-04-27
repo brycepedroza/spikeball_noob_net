@@ -31,9 +31,9 @@ p1 = GPIO.PWM(motor1['en'], 1000)
 p2 = GPIO.PWM(motor2['en'], 1000)
 p3 = GPIO.PWM(motor3['en'], 1000)
 
-p1.start(55)
-p2.start(55)
-p3.start(55)
+p1.start(60)
+p2.start(60)
+p3.start(60)
 
 # make sure all motors aren't moving at start
 GPIO.output(motor1['in_1'], GPIO.LOW)
@@ -68,9 +68,9 @@ while(1):
         GPIO.output(motor2['in_2'], GPIO.HIGH)
         GPIO.output(motor3['in_1'], GPIO.LOW)
         GPIO.output(motor3['in_2'], GPIO.HIGH)
-        p1.ChangeDutyCycle(55)
-        p2.ChangeDutyCycle(55)
-        p3.ChangeDutyCycle(55)
+        p1.ChangeDutyCycle(60)
+        p2.ChangeDutyCycle(60)
+        p3.ChangeDutyCycle(60)
 
     elif ctrl == 'a':
         print("left")
@@ -80,9 +80,9 @@ while(1):
         GPIO.output(motor2['in_2'], GPIO.HIGH)
         GPIO.output(motor3['in_1'], GPIO.HIGH)
         GPIO.output(motor3['in_2'], GPIO.LOW)
-        p1.ChangeDutyCycle(60)
-        p2.ChangeDutyCycle(50)
-        p3.ChangeDutyCycle(50)
+        p1.ChangeDutyCycle(70)
+        p2.ChangeDutyCycle(55)
+        p3.ChangeDutyCycle(55)
 
     elif ctrl == 's':
         print("backwards")
@@ -92,9 +92,9 @@ while(1):
         GPIO.output(motor2['in_2'], GPIO.LOW)
         GPIO.output(motor3['in_1'], GPIO.HIGH)
         GPIO.output(motor3['in_2'], GPIO.LOW)
-        p1.ChangeDutyCycle(55)
-        p2.ChangeDutyCycle(55)
-        p3.ChangeDutyCycle(55)
+        p1.ChangeDutyCycle(60)
+        p2.ChangeDutyCycle(60)
+        p3.ChangeDutyCycle(60)
 
     elif ctrl == 'd':
         print("right")
@@ -104,9 +104,9 @@ while(1):
         GPIO.output(motor2['in_2'], GPIO.LOW)
         GPIO.output(motor3['in_1'], GPIO.LOW)
         GPIO.output(motor3['in_2'], GPIO.HIGH)
-        p1.ChangeDutyCycle(60)
-        p2.ChangeDutyCycle(50)
-        p3.ChangeDutyCycle(50)
+        p1.ChangeDutyCycle(70)
+        p2.ChangeDutyCycle(55)
+        p3.ChangeDutyCycle(55)
 
     elif ctrl == 'e':
         GPIO.cleanup()
