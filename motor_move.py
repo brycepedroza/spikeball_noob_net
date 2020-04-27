@@ -18,20 +18,13 @@ motor3 = {
     "en": 21
 }
 
+# Configure the GPIO Pins
 motors = [motor1, motor2, motor3]
-
 GPIO.setmode(GPIO.BCM)
 for motor in motors:
-    # Configure the GPIO Pins
     GPIO.setup(motor['in_1'], GPIO.OUT)
     GPIO.setup(motor['in_2'], GPIO.OUT)
     GPIO.setup(motor['en'], GPIO.OUT)
-
-# GPIO.setup(in1,GPIO.OUT)
-# GPIO.setup(in2,GPIO.OUT)
-# GPIO.setup(en,GPIO.OUT)
-# GPIO.output(in1,GPIO.LOW)
-# GPIO.output(in2,GPIO.LOW)
 
 # Pulse Width Modulation
 p1 = GPIO.PWM(motor1['en'], 1000)
@@ -58,7 +51,6 @@ while(1):
 
     ctrl = raw_input()
 
-    # wasd movement, q to stop.
     if ctrl == 'q':
         print("stop")
         GPIO.output(motor1['in_1'], GPIO.LOW)
@@ -116,28 +108,9 @@ while(1):
         p2.ChangeDutyCycle(50)
         p3.ChangeDutyCycle(50)
 
-    elif ctrl == 'l':
-        print("low")
-        p1.ChangeDutyCycle(25)
-        p2.ChangeDutyCycle(25)
-        p3.ChangeDutyCycle(25)
-
-    elif ctrl == 'm':
-        print("medium")
-        p1.ChangeDutyCycle(50)
-        p2.ChangeDutyCycle(50)
-        p3.ChangeDutyCycle(50)
-
-    elif ctrl == 'h':
-        print("high")
-        p1.ChangeDutyCycle(75)
-        p2.ChangeDutyCycle(75)
-        p3.ChangeDutyCycle(75)
-
     elif ctrl == 'e':
         GPIO.cleanup()
         break
 
     else:
-        print("<<<  wrong data  >>>")
-        print("please enter the defined data to continue.....")
+        print("try again")
